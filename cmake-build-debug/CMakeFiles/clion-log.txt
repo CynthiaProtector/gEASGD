@@ -1,0 +1,33 @@
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3
+-- The C compiler identification is AppleClang 10.0.0.10001145
+-- The CXX compiler identification is AppleClang 10.0.0.10001145
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- CMAKE_SYSTEM_NAME Darwin
+-- CMake version '3.7.2' using generator 'Unix Makefiles'
+-- Performing Test SUPPORT_CXX11
+-- Performing Test SUPPORT_CXX11 - Success
+-- Performing Test SUPPORT_CXX0X
+-- Performing Test SUPPORT_CXX0X - Success
+-- Performing Test SUPPORT_MSSE2
+-- Performing Test SUPPORT_MSSE2 - Success
+-- Performing Test COMPILER_SUPPORT_MF16C
+-- Performing Test COMPILER_SUPPORT_MF16C - Success
+CMake Error at /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.7/Modules/FindCUDA.cmake:642 (message):
+  Specify CUDA_TOOLKIT_ROOT_DIR
+Call Stack (most recent call first):
+  CMakeLists.txt:242 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/cmake-build-debug/CMakeFiles/CMakeOutput.log".
