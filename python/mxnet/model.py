@@ -151,8 +151,9 @@ def _update_params_on_kvstore(param_arrays, grad_arrays, kvstore, param_names):
         name = param_names[index]
         # push gradient, priority is negative index
         kvstore.push(name, grad_list, priority=-index)
+        kvstore.cpweight(name, arg_list, priority= -index) # == xym edit this in 4.1
         # pull back the weights
-        kvstore.pull(name, arg_list, priority=-index)
+        kvstore.pull(priority= -index)
         # ==xym== in this place, one name corresponds to several values, and the values are places on various devices;
 
 def _update_params(param_arrays, grad_arrays, updater, num_device,
@@ -168,7 +169,7 @@ def _update_params(param_arrays, grad_arrays, updater, num_device,
             # push gradient, priority is negative index
             kvstore.push(name, grad_list, priority=-index)
             # pull back the sum gradients, to the same locations.
-            kvstore.pull(name, grad_list, priority=-index)
+            kvstore.pull_ori(name, grad_list, priority=-index)
         for k, p in enumerate(zip(arg_list, grad_list)):
             # faked an index here, to make optimizer create diff
             # state for the same index but on diff devs, TODO(mli)

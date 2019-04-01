@@ -109,6 +109,10 @@ class KVStore(object):
         self._updater = None
         self._updater_func = None
         self._str_updater_func = None
+    #========================  begin xym edit 4.1 ===============================#
+        self.keys = []
+        self.use_key_str = None
+    #========================  end   xym edit 4.1 ===============================#
 
     def __del__(self):
         check_call(_LIB.MXKVStoreFree(self.handle))
@@ -246,15 +250,33 @@ class KVStore(object):
         """
         assert(out is not None)
         ckeys, cvals, use_str_keys = _ctype_key_value(key, out)
+        self.keys = ckeys
+        self.use_key_str = use_str_keys
         if use_str_keys:
             check_call(_LIB.MXKVStoreCopyWieghtEx(self.handle, mx_uint(len(ckeys)), ckeys,
                                                       cvals, ctypes.c_int(priority)))
         else:
-            check_call(_LIB.MXKVStorePullWithSparse(self.handle, mx_uint(len(ckeys)), ckeys,
+            check_call(_LIB.MXKVStoreCopyWieght(self.handle, mx_uint(len(ckeys)), ckeys,
                                                     cvals, ctypes.c_int(priority)))
+
+    def pull(self, priority=0):
+        """ Pull back the update parameters and keep it in the comm_buf_[key]
+        :param key:
+        :param priority:
+        :return:
+        """
+        ckeys = self.keys
+        use_str_keys = self.use_key_str
+        if use_str_keys:
+            check_call(_LIB.MXKVStoreCopyWieghtEx(self.handle, mx_uint(len(ckeys)), ckeys,
+                                                  ctypes.c_int(priority)))
+        else:
+            check_call(_LIB.MXKVStoreCopyWieght(self.handle, mx_uint(len(ckeys)), ckeys,
+                                                ctypes.c_int(priority)))
+
 #========================  end   xym edit 4.1 ===============================#
 
-    def pull(self, key, out=None, priority=0, ignore_sparse=True):
+    def pull_ori(self, key, out=None, priority=0, ignore_sparse=True):
         """ Pulls a single value or a sequence of values from the store.
 
         This function returns immediately after adding an operator to the engine.
@@ -327,6 +349,7 @@ class KVStore(object):
             check_call(_LIB.MXKVStorePullWithSparse(self.handle, mx_uint(len(ckeys)), ckeys,
                                                     cvals, ctypes.c_int(priority),
                                                     ctypes.c_bool(ignore_sparse)))
+
 
     def row_sparse_pull(self, key, out=None, priority=0, row_ids=None):
         """ Pulls a single RowSparseNDArray value or a sequence of RowSparseNDArray values \
