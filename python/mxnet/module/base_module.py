@@ -186,6 +186,7 @@ class BaseModule(object):
         self.optimizer_initialized = False
         self._symbol = None
         self._total_exec_bytes = 0
+        self.count_batch = 0 # xym edit this. For skipping the first iteration;
 
     ################################################################################
     # High Level API
@@ -508,6 +509,8 @@ class BaseModule(object):
         if not isinstance(eval_metric, metric.EvalMetric):
             eval_metric = metric.create(eval_metric)
 
+        self.count_batch = 0 # xym edit: this is for skipping the local update of parameters.
+
         ################################################################################
         # training loop
         ################################################################################
@@ -552,6 +555,7 @@ class BaseModule(object):
                     for callback in _as_list(batch_end_callback):
                         callback(batch_end_params)
                 nbatch += 1
+                self.count_batch += 1
 
             # one epoch of training is finished
             for name, val in eval_name_vals:

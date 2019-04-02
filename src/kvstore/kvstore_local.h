@@ -129,6 +129,32 @@ class KVStoreLocal : public KVStore {
     PullImpl(keys, values, priority, ignore_sparse);
   }
 
+//======================== begin xym edit this 4.1 ====================//
+
+  void PullBroad(const std::vector<int>& keys,
+                 const std::vector<NDArray>& values,
+                 int priority) override {
+    SetKeyType(kIntKey);
+    PullBroadImpl(keys, values, priority);
+  }
+
+  void PullBroad(const std::vector<std::string>& str_keys,
+            const std::vector<NDArray*>& values,
+            int priority) override {
+          SetKeyType(kStringKey);
+          std::vector<int> keys(str_keys.size());
+          LookupKeys(str_keys, &keys);
+          PullBroadImpl(keys, values, priority);
+        }
+
+// PullBroadImpl()是新增加的函数，需要进行新的定义和实现；
+  virtual void PullBroadImpl(const std::vector<int>& keys,
+                        const std::vector<NDArray*>& values,
+                        int priority) = 0;
+
+//======================== end   xym edit this 4.1 ======================//
+
+
   void PullRowSparse(const std::vector<int>& keys,
                      const std::vector<std::pair<NDArray*, NDArray>>& val_rowids,
                      int priority = 0) override {

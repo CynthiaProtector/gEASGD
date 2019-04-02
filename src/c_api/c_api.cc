@@ -865,6 +865,7 @@ int MXKVStorePushEx(KVStoreHandle handle,
   API_END();
 }
 
+//=========================================== begin xym edit 4.1=======================================//
 int MXKVStorePull(KVStoreHandle handle,
                   mx_uint num,
                   const int* keys,
@@ -877,9 +878,10 @@ int MXKVStorePull(KVStoreHandle handle,
     v_keys[i] = keys[i];
     v_vals[i] = static_cast<NDArray*>(vals[i]);
   }
-  static_cast<KVStore*>(handle)->Pull(v_keys, v_vals, priority, true);
+  static_cast<KVStore*>(handle)->PullBroad(v_keys, v_vals, priority);
   API_END();
 }
+//增加新的函数PullBroad用于对pull取回的参数进行广播操作；
 
 int MXKVStorePullEx(KVStoreHandle handle,
                     mx_uint num,
@@ -893,9 +895,12 @@ int MXKVStorePullEx(KVStoreHandle handle,
     v_keys[i] = keys[i];
     v_vals[i] = static_cast<NDArray*>(vals[i]);
   }
-  static_cast<KVStore*>(handle)->Pull(v_keys, v_vals, priority, true);
+  static_cast<KVStore*>(handle)->PullBroad(v_keys, v_vals, priority);
   API_END();
 }
+
+//新的调用函数传入的参数中没有vals值，因此后面的一系列调用需要调整参数；
+//========================================== end xym edit 4.1===========================================//
 
 int MXKVStorePullWithSparse(KVStoreHandle handle,
                             mx_uint num,

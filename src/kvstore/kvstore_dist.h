@@ -199,6 +199,7 @@ class KVStoreDist : public KVStoreLocal {
       for (const int key : keys) {
         comm_buf_[key].WaitToWrite();
         compr_buf_[key].WaitToWrite();
+        comm_buf_copy[key].WaitToWrite();
       }
     } else {
       // do nothing
@@ -213,7 +214,22 @@ class KVStoreDist : public KVStoreLocal {
                 int priority) override {
     Push_(keys, values, priority, true);
   }
+//====================== begin xym edit this 4.1 ======================//
+  void PullBroadImpl(const std::vector<int>& keys,
+                     const std::vector<NDArray*>& values,
+                     int priority) override {
+     //需要定义新的变量comm_buf_copy[key]
+    std::vector<int> uniq_keys;
+    std::vector<std::vector<NDArray*> > grouped_values;
+    GroupKVPairsPull(keys, values, &uniq_keys, &grouped_vals, true);
 
+    for (size_t i = 0; i < uniq_keys.size(); ++i) {
+      int key = uniq_keys[i];
+      comm_->Broadcast(key, comm_buf_copy[key], grouped_vals[i], priority);
+    }
+  }
+
+//====================== end   xym edit this 4.1 ======================//
   void PullImpl(const std::vector<int>& keys,
                 const std::vector<NDArray*>& values,
                 int priority, bool ignore_sparse) override {
@@ -264,8 +280,9 @@ class KVStoreDist : public KVStoreLocal {
           FnProperty::kNormal,
           priority,
           "KVStoreDistDefaultStoragePull");
-
-      comm_->Broadcast(key, recv_buf, grouped_vals[i], priority);
+      comm_buf_copy[key] = recv_buf; // xym edit this;
+      //xym edit: the fetched parameters are stored in the comm_buf_copy[] for broadcasting;
+//      comm_->Broadcast(key, recv_buf, grouped_vals[i], priority);
     }
   }
 
@@ -751,6 +768,15 @@ class KVStoreDist : public KVStoreLocal {
    * for the data in pull and for original data in push
    */
   std::unordered_map<int, NDArray> comm_buf_;
+
+/**
+   * \brief buffer for non-compressed data.
+   * This is used for keeping the parameters pulled back
+   * from the parameter server, which then broadcast to
+   * the weights for training.
+   */
+    std::unordered_map<int, NDArray> comm_buf_copy;
+
   /**
    * \brief buffer for compressed data
    * Used when gradient compression is active and action

@@ -9,7 +9,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="265af1e3-1fe5-4e3a-9cc1-4ec779f96300" name="Default" comment="In this part, we add the kvstore.cpWeight() function to broadcast&#10;the pulled parameters to the arg_list. For the kvstore.pull function,&#10;we change its arguments." />
+    <list default="true" id="265af1e3-1fe5-4e3a-9cc1-4ec779f96300" name="Default" comment="In this part, we add the kvstore.cpWeight() function to broadcast&#10;the pulled parameters to the arg_list. For the kvstore.pull function,&#10;we change its arguments.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/mxnet/kvstore.h" afterPath="$PROJECT_DIR$/include/mxnet/kvstore.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/mxnet/kvstore.py" afterPath="$PROJECT_DIR$/python/mxnet/kvstore.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/mxnet/model.py" afterPath="$PROJECT_DIR$/python/mxnet/model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/mxnet/module/base_module.py" afterPath="$PROJECT_DIR$/python/mxnet/module/base_module.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/mxnet/module/module.py" afterPath="$PROJECT_DIR$/python/mxnet/module/module.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/c_api/c_api.cc" afterPath="$PROJECT_DIR$/src/c_api/c_api.cc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kvstore/kvstore_dist.h" afterPath="$PROJECT_DIR$/src/kvstore/kvstore_dist.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kvstore/kvstore_local.h" afterPath="$PROJECT_DIR$/src/kvstore/kvstore_local.h" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +31,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="kvstore.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/mxnet/kvstore.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="203" column="49" lean-forward="true" selection-start-line="203" selection-start-column="49" selection-end-line="203" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kvstore_local.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kvstore/kvstore_local.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="129" column="3" lean-forward="true" selection-start-line="129" selection-start-column="3" selection-end-line="129" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="base_module.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/mxnet/module/base_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="940" column="14" lean-forward="false" selection-start-line="940" selection-start-column="4" selection-end-line="940" selection-end-column="14" />
+            <state relative-caret-position="170">
+              <caret line="528" column="29" lean-forward="true" selection-start-line="528" selection-start-column="29" selection-end-line="528" selection-end-column="29" />
               <folding>
                 <element signature="e#972#983#0" expanded="true" />
               </folding>
@@ -33,21 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kvstore_dist.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="kvstore_dist.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kvstore/kvstore_dist.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="208" column="3" lean-forward="true" selection-start-line="208" selection-start-column="3" selection-end-line="208" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="c_api.cc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/c_api/c_api.cc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1162">
-              <caret line="938" column="42" lean-forward="true" selection-start-line="938" selection-start-column="42" selection-end-line="938" selection-end-column="42" />
+            <state relative-caret-position="221">
+              <caret line="255" column="59" lean-forward="true" selection-start-line="255" selection-start-column="59" selection-end-line="255" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -56,9 +76,25 @@
       <file leaf-file-name="comm.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kvstore/comm.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="185">
               <caret line="209" column="74" lean-forward="true" selection-start-line="209" selection-start-column="74" selection-end-line="209" selection-end-column="74" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="c_api.cc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/c_api/c_api.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="807">
+              <caret line="919" column="1" lean-forward="true" selection-start-line="919" selection-start-column="1" selection-end-line="919" selection-end-column="1" />
+              <folding>
+                <element signature="e#38291#38579#0" expanded="true" />
+                <element signature="e#38820#38870#0" expanded="true" />
+                <element signature="e#39268#39714#0" expanded="true" />
+                <element signature="e#39955#40030#0" expanded="true" />
+                <element signature="e#40535#41159#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,18 +102,20 @@
       <file leaf-file-name="module.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/mxnet/module/module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="665" column="19" lean-forward="false" selection-start-line="665" selection-start-column="19" selection-end-line="665" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="291">
+              <caret line="661" column="26" lean-forward="false" selection-start-line="661" selection-start-column="26" selection-end-line="661" selection-end-column="26" />
+              <folding>
+                <element signature="e#1058#1072#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/mxnet/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="164" column="20" lean-forward="true" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
+            <state relative-caret-position="318">
+              <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
               <folding>
                 <element signature="e#959#1013#0" expanded="true" />
               </folding>
@@ -88,31 +126,11 @@
       <file leaf-file-name="kvstore.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/mxnet/kvstore.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1470">
-              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+            <state relative-caret-position="721">
+              <caret line="331" column="8" lean-forward="false" selection-start-line="331" selection-start-column="8" selection-end-line="331" selection-end-column="8" />
               <folding>
                 <element signature="e#875#913#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/mxnet/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="301" column="0" lean-forward="true" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="executor_group.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/mxnet/module/executor_group.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="323" column="33" lean-forward="true" selection-start-line="323" selection-start-column="33" selection-end-line="323" selection-end-column="33" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -121,19 +139,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Speedometer</find>
-      <find>Pullimpl</find>
-      <find>Pull</find>
-      <find>comm_buf_[key]</find>
-      <find>CopyFromTo</find>
-      <find>CopyFromTo(</find>
-      <find>batch_END_CALL</find>
-      <find>PullImpl</find>
-      <find>WaitToWrite</find>
-      <find>comm</find>
       <find>comm_b</find>
       <find>comm_buf</find>
-      <find>comm_buf_</find>
       <find>d</find>
       <find>def</find>
       <find>def p</find>
@@ -146,11 +153,22 @@
       <find>class mode</find>
       <find>class mod</find>
       <find>class mo</find>
-      <find>_update_params_on_kvstore</find>
       <find>_updater_func</find>
-      <find>def push</find>
+      <find>MXKVStorePullRowSparse</find>
+      <find>MXKVStorePullEx</find>
+      <find>Pull</find>
       <find>def update</find>
+      <find>def push</find>
+      <find>pull</find>
       <find>def update(</find>
+      <find>void Pull</find>
+      <find>comm_buf_[</find>
+      <find>comm_buf_</find>
+      <find>PullImpl</find>
+      <find>_update_params_on_kvstore(</find>
+      <find>training loop</find>
+      <find>_update_params_on_kvstore</find>
+      <find>self.count</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -163,11 +181,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/engine/threaded_engine.cc" />
-        <option value="$PROJECT_DIR$/python/mxnet/module/base_module.py" />
         <option value="$PROJECT_DIR$/docs/tutorials/r/ndarray.md" />
         <option value="$PROJECT_DIR$/python/mxnet/module/executor_group.py" />
-        <option value="$PROJECT_DIR$/src/kvstore/kvstore_dist.h" />
+        <option value="$PROJECT_DIR$/src/c_api/c_api.cc" />
         <option value="$PROJECT_DIR$/python/mxnet/kvstore.py" />
+        <option value="$PROJECT_DIR$/include/mxnet/kvstore.h" />
+        <option value="$PROJECT_DIR$/src/kvstore/kvstore_local.h" />
+        <option value="$PROJECT_DIR$/src/kvstore/kvstore_dist.h" />
+        <option value="$PROJECT_DIR$/python/mxnet/module/base_module.py" />
+        <option value="$PROJECT_DIR$/python/mxnet/module/module.py" />
         <option value="$PROJECT_DIR$/python/mxnet/model.py" />
       </list>
     </option>
@@ -285,7 +307,7 @@
     <property name="FullScreen" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="c_api.cc&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/c_api/c_api.cc&#10;kvstore_dis&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/kvstore/kvstore_dist.h&#10;fit.py&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/example/image-classification/common/fit.py&#10;train&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/example/image-classification/train_mnist.py&#10;fit&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/example/image-classification/common/fit.py&#10;train_mnis&#9;null&#9;null&#10;module&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/python/mxnet/module/module.py&#10;base&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/python/mxnet/module/base_module.py&#10;module.py&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/python/mxnet/module/module.py&#10;bas&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/python/mxnet/module/base_module.py&#10;base_mo&#9;null&#9;null&#10;kvstore_lo&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/kvstore/kvstore_local.h&#10;kvstore_dist.&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/kvstore/kvstore_dist.h&#10;kvstore.h&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/include/mxnet/kvstore.h" />
+    <property name="SearchEverywhereHistoryKey" value="comm.h&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/kvstore/comm.h&#10;kvstore_local.h&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/kvstore/kvstore_local.h&#10;kvstore.h&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/include/mxnet/kvstore.h&#10;c_api.cc&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/c_api/c_api.cc&#10;kvstore_dis&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/kvstore/kvstore_dist.h&#10;fit.py&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/example/image-classification/common/fit.py&#10;train&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/example/image-classification/train_mnist.py&#10;fit&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/example/image-classification/common/fit.py&#10;train_mnis&#9;null&#9;null&#10;module&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/python/mxnet/module/module.py&#10;base&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/python/mxnet/module/base_module.py&#10;module.py&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/python/mxnet/module/module.py&#10;bas&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/python/mxnet/module/base_module.py&#10;base_mo&#9;null&#9;null&#10;kvstore_lo&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/kvstore/kvstore_local.h&#10;kvstore_dist.&#9;FILE&#9;file:///Users/xuyemao/Desktop/experiment_tf/Mxnet/mxnet-1.3/src/kvstore/kvstore_dist.h" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -479,7 +501,7 @@
       <option name="presentableId" value="Default" />
       <updated>1552612899436</updated>
       <workItem from="1552612903066" duration="12041000" />
-      <workItem from="1553138309997" duration="42539000" />
+      <workItem from="1553138309997" duration="61403000" />
     </task>
     <task id="LOCAL-00001" summary="In this part, we add the kvstore.cpWeight() function to broadcast&#10;the pulled parameters to the arg_list. For the kvstore.pull function,&#10;we change its arguments.">
       <created>1554108114329</created>
@@ -492,16 +514,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54580000" />
+    <option name="totallyTimeSpent" value="73444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19759037" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19879518" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36626506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18915662" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1595136" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -642,14 +665,6 @@
           <folding>
             <element signature="e#3033#3054#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/mxnet/kvstore.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3196">
-          <caret line="188" column="67" lean-forward="false" selection-start-line="188" selection-start-column="67" selection-end-line="188" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,26 +838,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kvstore/comm.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="209" column="74" lean-forward="true" selection-start-line="209" selection-start-column="74" selection-end-line="209" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python/mxnet/callback.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="165" column="39" lean-forward="true" selection-start-line="165" selection-start-column="39" selection-end-line="165" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/c_api/c_api.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1162">
-          <caret line="938" column="42" lean-forward="true" selection-start-line="938" selection-start-column="42" selection-end-line="938" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -863,57 +862,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kvstore/kvstore_local.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="363" column="63" lean-forward="true" selection-start-line="363" selection-start-column="63" selection-end-line="363" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kvstore/kvstore_dist.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="208" column="3" lean-forward="true" selection-start-line="208" selection-start-column="3" selection-end-line="208" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python/mxnet/kvstore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1470">
-          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+        <state relative-caret-position="721">
+          <caret line="331" column="8" lean-forward="false" selection-start-line="331" selection-start-column="8" selection-end-line="331" selection-end-column="8" />
           <folding>
             <element signature="e#875#913#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/mxnet/kvstore.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="203" column="49" lean-forward="true" selection-start-line="203" selection-start-column="49" selection-end-line="203" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c_api/c_api.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="919" column="1" lean-forward="true" selection-start-line="919" selection-start-column="1" selection-end-line="919" selection-end-column="1" />
+          <folding>
+            <element signature="e#38291#38579#0" expanded="true" />
+            <element signature="e#38820#38870#0" expanded="true" />
+            <element signature="e#39268#39714#0" expanded="true" />
+            <element signature="e#39955#40030#0" expanded="true" />
+            <element signature="e#40535#41159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kvstore/comm.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="209" column="74" lean-forward="true" selection-start-line="209" selection-start-column="74" selection-end-line="209" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kvstore/kvstore_local.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="129" column="3" lean-forward="true" selection-start-line="129" selection-start-column="3" selection-end-line="129" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/mxnet/module/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="661" column="26" lean-forward="false" selection-start-line="661" selection-start-column="26" selection-end-line="661" selection-end-column="26" />
+          <folding>
+            <element signature="e#1058#1072#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/mxnet/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="154" column="26" lean-forward="true" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
+          <folding>
+            <element signature="e#959#1013#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python/mxnet/module/base_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="940" column="14" lean-forward="false" selection-start-line="940" selection-start-column="4" selection-end-line="940" selection-end-column="14" />
+        <state relative-caret-position="170">
+          <caret line="528" column="29" lean-forward="true" selection-start-line="528" selection-start-column="29" selection-end-line="528" selection-end-column="29" />
           <folding>
             <element signature="e#972#983#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/mxnet/module/module.py">
+    <entry file="file://$PROJECT_DIR$/src/kvstore/kvstore_dist.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="665" column="19" lean-forward="false" selection-start-line="665" selection-start-column="19" selection-end-line="665" selection-end-column="19" />
+        <state relative-caret-position="221">
+          <caret line="255" column="59" lean-forward="true" selection-start-line="255" selection-start-column="59" selection-end-line="255" selection-end-column="59" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/mxnet/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="164" column="20" lean-forward="true" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
-          <folding>
-            <element signature="e#959#1013#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
