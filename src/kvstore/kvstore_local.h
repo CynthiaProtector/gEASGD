@@ -131,9 +131,7 @@ class KVStoreLocal : public KVStore {
 
 //======================== begin xym edit this 4.1 ====================//
 
-  void PullBroad(const std::vector<int>& keys,
-                 const std::vector<NDArray>& values,
-                 int priority) override {
+  void PullBroad(const std::vector<int>& keys, const std::vector<NDArray*>& values, int priority) override {
     SetKeyType(kIntKey);
     PullBroadImpl(keys, values, priority);
   }
