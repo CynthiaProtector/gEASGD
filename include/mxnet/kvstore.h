@@ -197,17 +197,11 @@ class KVStore {
   virtual void Pull(const std::vector<std::string>& str_keys,
                     const std::vector<NDArray*>& values,
                     int priority = 0, bool ignore_sparse = true) = 0;
-//================= begin xym edit 4.1 =======================//
 
-  virtual void PullBroad(const std::vector<int>& str_keys,
-                           const std::vector<NDArray*>& values,
-                           int priority = 0) = 0;
+  virtual void PullBroad(const std::vector<int>& keys, const std::vector<NDArray*>& values, int priority = 0) = 0;
 
-  virtual void PullBroad(const std::vector<std::string>& str_keys,
-                         const std::vector<NDArray*>& values,
-                         int priority = 0) = 0;
+  virtual void PullBroad(const std::vector<std::string>& str_keys, const std::vector<NDArray*>& values, int priority = 0) = 0;
 
-//================= begin xym edit 4.1 =======================//
   /*!
    * \brief pull a list of key-value pairs from the store.
    *        The NDArray pulled back will be in row_sparse storage with only the

@@ -129,7 +129,6 @@ class KVStoreLocal : public KVStore {
     PullImpl(keys, values, priority, ignore_sparse);
   }
 
-//======================== begin xym edit this 4.1 ====================//
 
   void PullBroad(const std::vector<int>& keys, const std::vector<NDArray*>& values, int priority) override {
     SetKeyType(kIntKey);
@@ -145,12 +144,20 @@ class KVStoreLocal : public KVStore {
           PullBroadImpl(keys, values, priority);
         }
 
-// PullBroadImpl()是新增加的函数，需要进行新的定义和实现；
   virtual void PullBroadImpl(const std::vector<int>& keys,
                         const std::vector<NDArray*>& values,
-                        int priority) = 0;
+                        int priority) {
+      std::vector<int> uniq_keys;
+      std::vector<std::vector<NDArray*> > grouped_vals;
+      GroupKVPairsPull(keys, values, &uniq_keys, &grouped_vals, true);
 
-//======================== end   xym edit this 4.1 ======================//
+      for (size_t i = 0; i < uniq_keys.size(); ++i) {
+          int key = uniq_keys[i];
+          const NDArray& local = local_[key];
+          CHECK(!local.is_none()) << "key " << key << " has not been inited";
+          comm_->Broadcast(key, local, grouped_vals[i], priority);
+      }
+  }
 
 
   void PullRowSparse(const std::vector<int>& keys,

@@ -215,12 +215,13 @@ class KVStoreDist : public KVStoreLocal {
     Push_(keys, values, priority, true);
   }
 //====================== begin xym edit this 4.1 ======================//
+
   void PullBroadImpl(const std::vector<int>& keys,
                      const std::vector<NDArray*>& values,
                      int priority) override {
      //需要定义新的变量comm_buf_copy[key]
     std::vector<int> uniq_keys;
-    std::vector<std::vector<NDArray*> > grouped_values;
+    std::vector<std::vector<NDArray*> > grouped_vals;
     GroupKVPairsPull(keys, values, &uniq_keys, &grouped_vals, true);
 
     for (size_t i = 0; i < uniq_keys.size(); ++i) {
